@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<p>Some content on the add page!</p>
+
+<form action="{{ url_for('add') }}" method="POST">
+    {{ form.csrf_token }}
+    {{ form.title.label }}
+    {{ form.title }}    
+    {{ form.submit }}
+</form>
+
+{% if title %}
+    <h1>{{ title }} </h1>
+{% endif%}
+
+{% endblock %}
